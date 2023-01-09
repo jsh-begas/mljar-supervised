@@ -76,7 +76,7 @@ class PreprocessingCategorical(object):
                     # convert to integer
                     lbl = LabelEncoder()
                     lbl.from_json(lbl_params)
-                    X.loc[:, column] = lbl.transform(X.loc[:, column])
+                    X[column] = lbl.transform(X.loc[:, column])
 
             return X
 
@@ -91,7 +91,7 @@ class PreprocessingCategorical(object):
                 # convert to integer
                 lbl = LabelEncoder()
                 lbl.from_json(lbl_params)
-                X.loc[:, column] = lbl.inverse_transform(X.loc[:, column])
+                X[column] = lbl.inverse_transform(X.loc[:, column])
 
         return X
 
