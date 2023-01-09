@@ -209,7 +209,7 @@ class EDA:
                             sns.kdeplot(
                                 x=X.iloc[np.where(y == i)[0]][col],
                                 label=f"class {i}",
-                                shade=True,
+                                fill=True,
                             )
                         plt.legend()
                         plt.gca().set_title(
@@ -270,7 +270,7 @@ class EDA:
                         for i in X[col].value_counts().index[:7]:
                             sns.kdeplot(
                                 x=y[X[X[col] == i].index],
-                                shade=True,
+                                fill=True,
                                 label=f"{col}_{i}",
                             )
                         plt.gca().set_title(
